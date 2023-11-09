@@ -34,7 +34,7 @@ public class WelcomeController implements Initializable {
     }
 
     public void setUserInformation(String username, String nationality) {
-        welcomeUser.setText("Welcome " + username + "!!!");
+        welcomeUser.setText("Welcome " + username + "!");
         displayFlag(nationality);
     }
 

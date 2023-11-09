@@ -7,20 +7,35 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.masathaiquiz.WelcomeController">
    <children>
-      <Label fx:id="welcomeUser" layoutX="354.0" layoutY="107.0" text="Welcome Ram!">
+      <Label fx:id="welcomeUser" layoutX="346.0" layoutY="100.0" text="Welcome Ram!">
          <font>
-            <Font name="Arial Rounded MT Bold" size="20.0" />
+            <Font name="Arial Rounded MT Bold" size="22.0" />
          </font>
       </Label>
-      <Button fx:id="logoutBtn" layoutX="368.0" layoutY="408.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="118.0" style="-fx-background-color: #0c4a6e; -fx-cursor: HAND;" text="Logout" textFill="WHITE">
+      <Button fx:id="logoutBtn" layoutX="251.0" layoutY="408.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="118.0" style="-fx-background-color: #0c4a6e; -fx-cursor: HAND;" text="Logout" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <ImageView fx:id="flagImageView" fitHeight="180.0" fitWidth="260.0" layoutX="310.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="flagImageView" fitHeight="180.0" fitWidth="250.0" layoutX="310.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/thailand.jpg" />
          </image>
       </ImageView>
+      <Label layoutX="103.0" layoutY="357.0" text="By taking the test and passing it, you can become a citizen of this unified nation. Good luck!" textFill="#4a4a4a">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="516.0" layoutY="408.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="118.0" style="-fx-background-color: #0f766e; -fx-cursor: HAND;" text="Start Test" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="310.0" layoutY="146.0" text="Nation you representing:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
