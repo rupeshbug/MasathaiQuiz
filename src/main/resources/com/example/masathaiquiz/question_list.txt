@@ -1,0 +1,21 @@
+1:A:Which religion has had a significant influence on the cultural practices of Thailand?:Buddhism:Hinduism:Islam:Christianity
+2:C:Which country gained independence from British colonial rule in 1957?:Thailand:Singapore:Malaysia:Indonesia
+3:B:Which year did Singapore gain independence from Malaysia and become a sovereign city-state?:1957:1965:1971:1980
+4:D:In which country are there specific legal provisions for inheritance based on religious law?:Malaysia:Thailand:Singapore:All of the above
+5:C:What is the traditional clothing known as "Baju Melayu" worn in Malaysia?:Sari:Traditional dance costume:Men's attire:Headscarf
+6:B:Which country practices a constitutional monarchy system of government?:Singapore:Thailand:Malaysia:All of the above
+7:D:In Singapore, what is the name of the political party that has been in power since the country's independence in 1965?:Workers' Party:Democratic Action Party:Liberal Party:People's Action Party
+8:A:In Malaysia, what is the traditional practice of communal land ownership among certain indigenous communities called?:Adat:Torrens System:Hukou:Strata Title
+9:B:In Thailand, what is the traditional practice of collective land ownership within rural communities called?:Nor Sor Sam Gor:Sor Kor Nung:Chanote:Suan Phum
+10:D:Which event led to the separation of Singapore from Malaysia in 1965?:Japanese Occupation:Constitutional Crisis:Konfrontasi:Ideological Differences
+11:D:What is the traditional Malay weapon known for its intricate design and craftsmanship?:Kukri:Scimitar:Katana:Kris
+12:D:Which country practices a system of compulsory voting for its citizens in national elections?:Malaysia:Singapore:Thailand:None of the above
+13:C:Which city serves as the federal capital and administrative center of Malaysia?:Singapore City:Jakarta:Kuala Lumpur:Bangkok
+14:A:Which event in Thai history led to the transition from absolute monarchy to constitutional monarchy in the early 20th century?:Siamese Revolution of 1932:Burmese-Siamese War:Thai Civil War:Ayutthaya Revolt
+15:A:Which body of water surrounds Singapore, making it an island nation?:South China Sea:Pacific Ocean:Indian Ocean:Arabian Sea
+16:B:What is the traditional Thai greeting known as?:Konnichiwa:Sawasdee:Annyeonghaseyo:Xin chào
+17:A:Which country has specific legal provisions for inheritance based on customary law for indigenous communities?:Malaysia:Singapore:Thailand:Indonesia
+18:D:What is the name of the hill in Singapore that is also known as the highest natural point on the island?:Telok Blangah Hill:Fort Canning Hill:Mount Faber:Bukit Timah Hill
+19:B:What is the name of the ancient capital city of Thailand known for its impressive historical ruins?:Sukhothai:Ayutthaya:Chiang Mai:Nakhon Si Thammarat
+20:C:Which ethnic group constitutes the majority population in Malaysia?:Chinese:Indigenous tribes:Malay:Indian
+
