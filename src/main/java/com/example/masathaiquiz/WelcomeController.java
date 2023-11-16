@@ -20,6 +20,8 @@ public class WelcomeController implements Initializable {
     private Button logoutBtn;
     @FXML
     private ImageView flagImageView;
+    @FXML
+    private Button startTestBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -28,6 +30,13 @@ public class WelcomeController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 DBUtils.changeScene(event, "login.fxml", "Login!", null, null);
+            }
+        });
+
+        startTestBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "quiz.fxml", "Quiz!", null, null);
             }
         });
 
