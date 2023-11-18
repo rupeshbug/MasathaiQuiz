@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.masathaiquiz.QuizController">
    <children>
-      <Label fx:id="question" layoutX="46.0" layoutY="77.0" prefHeight="92.0" prefWidth="712.0" style="-fx-alignment: center;" text=" 1. Who is the greatest of all time?" wrapText="true">
+      <Label fx:id="question" layoutX="67.0" layoutY="79.0" prefHeight="66.0" prefWidth="668.0" style="-fx-alignment: center; -fx-background-color: #fde047; -fx-padding: 3px 10px 3px 10px; -fx-background-radius: 5px; -fx-text-alignment: center;" text="1. Who is the greatest of all time? 1. Who is the greatest of all time timer time?" wrapText="true">
          <font>
             <Font name="Arial" size="20.0" />
          </font>

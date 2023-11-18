@@ -2,8 +2,12 @@ package com.example.masathaiquiz;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,12 +21,12 @@ public class QuizController {
     public Button opt1, opt2, opt3, opt4;
 
 //  counter for the current question number
-    int counter = 0;
-    static int correct = 0;
-    static int wrong = 0;
+// Counter for the current question number
+    private int currentQuestionIndex = 0;
+    private int correctAnswers = 0;
+    private int wrongAnswers = 0;
 
     private List<Question> questions;
-    private int currentQuestionIndex;
 
     public void initialize(){
         // Load questions from the external file
@@ -58,6 +62,33 @@ public class QuizController {
         }
     }
 
+    private void showResults() {
+        try {
+            // Close the current stage (quiz stage)
+            Stage currentStage = (Stage) question.getScene().getWindow();
+            currentStage.close();
+
+            // Load the results page
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("results.fxml"));
+            Parent root = loader.load();
+
+            // Access the controller for the results page
+            ResultsController resultsController = loader.getController();
+
+            // Set the results data
+            resultsController.setResults(getCorrectAnswers(), getTotalQuestions(), getWrongAnswers(), getPercentageCorrect());
+
+            // Show the results page
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Results!");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void loadNextQuestion() {
         if (currentQuestionIndex < questions.size()) {
             Question currentQuestion = questions.get(currentQuestionIndex);
@@ -67,30 +98,69 @@ public class QuizController {
             opt3.setText(currentQuestion.getOptions()[2]);
             opt4.setText(currentQuestion.getOptions()[3]);
 
+//            System.out.println("Current Question Index: " + currentQuestionIndex);
+
             currentQuestionIndex++;
         } else {
-            // Quiz finished, show results or navigate to the result page
+            showResults();
+        }
+    }
+
+    private void checkAnswer(String selectedOption) {
+        Question currentQuestion = questions.get(currentQuestionIndex - 1);
+        String correctOption = currentQuestion.getFullCorrectOption();
+
+        if (selectedOption.equals(correctOption)) {
+//            System.out.println("This is the print statement");
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
         }
     }
 
     @FXML
     public void opt1Clicked(ActionEvent event){
+        checkAnswer(opt1.getText());
         loadNextQuestion();
     }
 
     @FXML
     public void opt2Clicked(ActionEvent event){
+        checkAnswer(opt2.getText());
         loadNextQuestion();
     }
 
     @FXML
     public void opt3Clicked(ActionEvent event){
+        checkAnswer(opt3.getText());
         loadNextQuestion();
     }
 
     @FXML
     public void opt4Clicked(ActionEvent event){
+        checkAnswer(opt4.getText());
         loadNextQuestion();
+    }
+
+
+    public int getTotalQuestions() {
+        return questions.size();
+    }
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public int getWrongAnswers() {
+        return wrongAnswers;
+    }
+
+    public double getPercentageCorrect() {
+        int totalQuestions = correctAnswers + wrongAnswers;
+        if (totalQuestions == 0) {
+            return 0.0;
+        }
+        return ((double) correctAnswers / totalQuestions) * 100;
     }
 
 }
