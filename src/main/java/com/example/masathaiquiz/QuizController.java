@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -160,7 +161,11 @@ public class QuizController {
         if (totalQuestions == 0) {
             return 0.0;
         }
-        return ((double) correctAnswers / totalQuestions) * 100;
+        double percentage = ((double) correctAnswers / totalQuestions) * 100;
+
+        // Format to display only one decimal place
+        DecimalFormat decimalFormat = new DecimalFormat("#.#");
+        return Double.parseDouble(decimalFormat.format(percentage));
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.masathaiquiz;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
 import javafx.scene.control.Label;
 
 public class ResultsController {
@@ -15,6 +16,9 @@ public class ResultsController {
 
     @FXML
     private Label resultAnnouncement;
+
+    @FXML
+    private PieChart pieChart;
 
     // New fields to store results
     private int correctAnswers;
@@ -49,7 +53,16 @@ public class ResultsController {
         } else {
             resultAnnouncement.setText("SORRY! You have failed the citizenship test.");
         }
+
+        updatePieChartData();
     }
 
-    // Other methods and fields
+    private void updatePieChartData() {
+        pieChart.getData().clear();
+
+        // Add data points
+        pieChart.getData().add(new Data("Correct Answers", correctAnswers));
+        pieChart.getData().add(new Data("Wrong Answers", wrongAnswers));
+    }
+
 }

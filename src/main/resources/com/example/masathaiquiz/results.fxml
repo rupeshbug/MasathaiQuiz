@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -11,20 +12,21 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="resultLabel" layoutX="38.0" layoutY="197.0" prefHeight="180.0" prefWidth="250.0" style="-fx-background-color: #0c4a6e; -fx-padding: 10; -fx-background-radius: 5px;" text="10" textFill="WHITE">
+      <Label fx:id="resultLabel" layoutX="29.0" layoutY="196.0" prefHeight="180.0" prefWidth="250.0" style="-fx-background-color: #0c4a6e; -fx-padding: 8; -fx-background-radius: 5px;" text="10" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="marksObtained" layoutX="324.0" layoutY="231.0" prefHeight="90.0" prefWidth="118.0" style="-fx-background-color: #facc15; -fx-background-radius: 5px; -fx-padding: 15px 10px; -fx-alignment: center;" text="15/20" textFill="#1b1313">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="resultAnnouncement" layoutX="204.0" layoutY="444.0" text="CONGRATULATIONS! You have passed the exam.">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="marksObtained" layoutX="341.0" layoutY="239.0" prefHeight="68.0" prefWidth="118.0" style="-fx-background-color: #facc15; -fx-background-radius: 5px; -fx-padding: 15px 10px; -fx-alignment: center;" text="15/20" textFill="#483535">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="26.0" />
-         </font>
-      </Label>
-      <Label fx:id="resultAnnouncement" layoutX="202.0" layoutY="439.0" text="CONGRATULATIONS! You have passed the exam.">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
+      <PieChart fx:id="pieChart" layoutX="454.0" layoutY="136.0" prefHeight="268.0" prefWidth="314.0" />
    </children>
 </AnchorPane>
