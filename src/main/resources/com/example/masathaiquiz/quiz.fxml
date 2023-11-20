@@ -31,5 +31,15 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Button fx:id="prevBtn" layoutX="212.0" layoutY="452.0" mnemonicParsing="false" onAction="#prevBtnClicked" style="-fx-background-color: #16a34a; -fx-cursor: HAND; -fx-padding: 6px 10px;" text="&lt;&lt; Previous Question &gt;&gt;" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="nextBtn" onAction="#nextBtnClicked" layoutX="444.0" layoutY="452.0" mnemonicParsing="false" style="-fx-background-color: #16a34a; -fx-cursor: HAND; -fx-padding: 6px 10px;" text="&lt;&lt; Next Question &gt;&gt;" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

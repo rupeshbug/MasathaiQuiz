@@ -19,7 +19,7 @@ public class QuizController {
     public Label question;
 
     @FXML
-    public Button opt1, opt2, opt3, opt4;
+    public Button opt1, opt2, opt3, opt4, prevBtn, nextBtn;
 
 //  counter for the current question number
 // Counter for the current question number
@@ -34,7 +34,7 @@ public class QuizController {
         loadQuestionsFromFile("/com/example/masathaiquiz/question_list.txt");
 
         // Display the first question
-        loadNextQuestion();
+        loadQuestion(currentQuestionIndex);
     }
 
     private void loadQuestionsFromFile(String filePath) {
@@ -90,25 +90,23 @@ public class QuizController {
         }
     }
 
-    private void loadNextQuestion() {
-        if (currentQuestionIndex < questions.size()) {
-            Question currentQuestion = questions.get(currentQuestionIndex);
-            question.setText((currentQuestionIndex + 1) + ". " + currentQuestion.getQuestionText());
+    private void loadQuestion(int index) {
+        if (index >= 0 && index < questions.size()) {
+            Question currentQuestion = questions.get(index);
+            question.setText((index + 1) + ". " + currentQuestion.getQuestionText());
             opt1.setText(currentQuestion.getOptions()[0]);
             opt2.setText(currentQuestion.getOptions()[1]);
             opt3.setText(currentQuestion.getOptions()[2]);
             opt4.setText(currentQuestion.getOptions()[3]);
 
-//            System.out.println("Current Question Index: " + currentQuestionIndex);
-
-            currentQuestionIndex++;
-        } else {
-            showResults();
+            // Enable/disable next/previous buttons based on the current index
+            prevBtn.setDisable(index == 0);
+            nextBtn.setDisable(index == questions.size() - 1);
         }
     }
 
     private void checkAnswer(String selectedOption) {
-        Question currentQuestion = questions.get(currentQuestionIndex - 1);
+        Question currentQuestion = questions.get(currentQuestionIndex);
         String correctOption = currentQuestion.getFullCorrectOption();
 
         if (selectedOption.equals(correctOption)) {
@@ -116,6 +114,22 @@ public class QuizController {
             correctAnswers++;
         } else {
             wrongAnswers++;
+        }
+    }
+
+    @FXML
+    public void prevBtnClicked(ActionEvent event) {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            loadQuestion(currentQuestionIndex);
+        }
+    }
+
+    @FXML
+    public void nextBtnClicked(ActionEvent event) {
+        if (currentQuestionIndex < questions.size() - 1) {
+            currentQuestionIndex++;
+            loadQuestion(currentQuestionIndex);
         }
     }
 
@@ -143,6 +157,14 @@ public class QuizController {
         loadNextQuestion();
     }
 
+    private void loadNextQuestion() {
+        if (currentQuestionIndex < questions.size() - 1) {
+            currentQuestionIndex++;
+            loadQuestion(currentQuestionIndex);
+        } else {
+            showResults();
+        }
+    }
 
     public int getTotalQuestions() {
         return questions.size();
